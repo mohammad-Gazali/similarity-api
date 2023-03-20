@@ -21,8 +21,10 @@ export default function RootLayout({
       <body className="min-h-screen bg-slate-50 dark:bg-slate-900 antialiased">
         
         <Providers>
-          {/* @ts-expect-error ServerComponent */}
-          <Navbar />
+          <header>
+            {/* @ts-expect-error ServerComponent */}
+            <Navbar />
+          </header>
 
           {children}
 
@@ -30,7 +32,7 @@ export default function RootLayout({
 
         </Providers>
         {/* Allow for more height on mobile devices */}
-        <div className="md:hidden h-40" />
+        <div className="md:h-6 h-40" />
       </body>
     </html>
   )

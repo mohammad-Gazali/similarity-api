@@ -4,6 +4,8 @@ import SignInButton from "./SignInButton";
 import SignOutButton from "./SignOutButton";
 import ThemeToggle from "./ThemeToggle";
 import Icons from "./Icons";
+import DocumentationTaps from "./DocumentationTabs";
+import Code from "./Code";
 
 
 export {
@@ -12,5 +14,7 @@ export {
     SignInButton,
     SignOutButton,
     ThemeToggle,
-    Icons
+    Icons,
+    DocumentationTaps,
+    Code
 }
