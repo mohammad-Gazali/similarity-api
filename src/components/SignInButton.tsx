@@ -14,6 +14,7 @@ const SignInButton: FC<SignInButtonProps> = ({}) => {
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 
     const signInWithGitHub = async () => {
+        
         setIsLoading(true);
 
         try {

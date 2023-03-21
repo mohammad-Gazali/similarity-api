@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/ui-components";
 import { cva, VariantProps } from "class-variance-authority";
 import { ButtonHTMLAttributes, FC, forwardRef } from "react";
 import { Loader2 } from "lucide-react";

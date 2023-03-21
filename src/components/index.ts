@@ -6,6 +6,10 @@ import ThemeToggle from "./ThemeToggle";
 import Icons from "./Icons";
 import DocumentationTaps from "./DocumentationTabs";
 import Code from "./Code";
+import ApiDashboard from "./ApiDashboard";
+import RequestApiKey from "./RequestApiKey";
+import CopyButton from "./CopyButton";
+
 
 
 export {
@@ -16,5 +20,8 @@ export {
     ThemeToggle,
     Icons,
     DocumentationTaps,
-    Code
+    Code,
+    ApiDashboard,
+    RequestApiKey,
+    CopyButton,
 }

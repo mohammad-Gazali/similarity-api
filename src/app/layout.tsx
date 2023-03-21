@@ -1,7 +1,7 @@
  // here we made a shortcut for this import in tsconfig.json file in "compilerOptions" --> "paths" attribute
 import "@/styles/globals.css";
 import { Inter } from "next/font/google";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/ui-components";
 import { Providers, Navbar } from "@/components";
 import { Toaster } from "@/components/ui/Toast";
 
