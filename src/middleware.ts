@@ -15,7 +15,7 @@ const redis = new Redis({
 
 const ratelimit = new Ratelimit({
 	redis: redis,
-	limiter: Ratelimit.slidingWindow(5, "1 h"),
+	limiter: Ratelimit.slidingWindow(50, "1 h"),
 });
 
 export default withAuth(
@@ -35,34 +35,34 @@ export default withAuth(
 			}
 		}
 
-		// Manage route protection
-		const token = await getToken({ req });
-		const isAuth = !!token;
-		const isAuthPage = req.nextUrl.pathname.startsWith("/login");
+		// // Manage route protection
+		// const token = await getToken({ req });
+		// const isAuth = !!token;
+		// const isAuthPage = req.nextUrl.pathname.startsWith("/login");
 
-		const sensitiveRoutes = ["/dashboard"];
+		// const sensitiveRoutes = ["/dashboard"];
 
-		if (isAuthPage) {
-			if (isAuth) {
-				return NextResponse.redirect(new URL("/dashboard", req.url));
-			}
+		// if (isAuthPage) {
+		// 	if (isAuth) {
+		// 		return NextResponse.redirect(new URL("/dashboard", req.url));
+		// 	}
 
-			return null;
-		}
+		// 	return null;
+		// }
 
-		if (
-			!isAuth &&
-			sensitiveRoutes.some((route) => pathname.startsWith(route))
-		) {
-			return NextResponse.redirect(new URL("/login", req.url));
-		}
+		// if (
+		// 	!isAuth &&
+		// 	sensitiveRoutes.some((route) => pathname.startsWith(route))
+		// ) {
+		// 	return NextResponse.redirect(new URL("/login", req.url));
+		// }
 	},
 	{
 		callbacks: {
 			async authorized() {
-				// This is a work-around for handling redirect on auth pages.
-				// We return true here so that the middleware function above
-				// is always called.
+				//? This is a work-around for handling redirect on auth pages.
+				//? We return true here so that the middleware function above.
+				//? is always called.
 				return true;
 			},
 		},
