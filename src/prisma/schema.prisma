@@ -71,6 +71,7 @@ model ApiRequest {
   apiKey     ApiKey   @relation(fields: [apiKeyId], references: [id])
   apiKeyId   String
   timestamp  DateTime @default(now())
+  path       String
   method     String
   status     Int
   duration   Int

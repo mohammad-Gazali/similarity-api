@@ -9,6 +9,9 @@ import Code from "./Code";
 import ApiDashboard from "./ApiDashboard";
 import RequestApiKey from "./RequestApiKey";
 import CopyButton from "./CopyButton";
+import Table from "./Table";
+import ApiKeyOptions from "./ApiKeyOptions";
+import UserAuthForm from "./UserAuthForm";
 
 
 
@@ -24,4 +27,7 @@ export {
     ApiDashboard,
     RequestApiKey,
     CopyButton,
+    Table,
+    ApiKeyOptions,
+    UserAuthForm
 }

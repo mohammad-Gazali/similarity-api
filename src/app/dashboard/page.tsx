@@ -26,7 +26,14 @@ const page = async () => {
 
 	return (
         <section className="max-w-7xl mx-auto mt-16">
-            {apiKey ? <ApiDashboard /> : <RequestApiKey />}
+            {
+                apiKey 
+            ?
+                // @ts-expect-error Server Components 
+                <ApiDashboard />
+            :
+                <RequestApiKey />
+            }
         </section>
     );
 };

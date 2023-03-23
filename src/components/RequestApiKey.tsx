@@ -9,6 +9,7 @@ import Paragraph from "@/ui/Paragraph";
 import CopyButton from "./CopyButton";
 import { Input } from "@/ui/Input";
 import Button from "@/ui/Button";
+import { useRouter } from "next/navigation";
 
 
 
@@ -16,6 +17,7 @@ const RequestApiKey: FC = () => {
 
     const [isCreating, setIsCreating] = useState<boolean>(false);
     const [apiKey, setApiKey] = useState<string | null>(null);
+    const router = useRouter();
 
     const createNewApiKey = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -25,6 +27,8 @@ const RequestApiKey: FC = () => {
         try {
             const generatedApiKey = await createApiKey();
             setApiKey(generatedApiKey);
+            router.refresh();
+            
         } catch (error) {
             if (error instanceof Error) {
                 toast({
